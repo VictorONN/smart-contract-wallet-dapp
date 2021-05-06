@@ -1,6 +1,6 @@
 import { ethers, Contract } from 'ethers';
 import detectEthereumProvider from '@metamask/detect-provider';
-import Wallet from './artifacts/contracts/Wallet.sol/Wallet.json';
+import Wallet from './contracts/Wallet.json';
 import addresses from './addresses.js';
 
 // const getBlockchain = () =>
@@ -29,7 +29,8 @@ import addresses from './addresses.js';
 //     });
 //   });
 
-const CONTRACT_ADDRESS = Wallet.networks[].address;
+// const CONTRACT_ADDRESS = Wallet.networks[].address;
+
   const getBlockchain = () =>
   new Promise( async (resolve, reject) => {
     let provider = await detectEthereumProvider();
@@ -39,7 +40,7 @@ const CONTRACT_ADDRESS = Wallet.networks[].address;
       provider = new ethers.providers.Web3Provider(provider);
       const signer = provider.getSigner();
       const wallet = new Contract(
-        Wallet.networks[window.ethereum.networkVersion].address,
+        Wallet.networks[5777].address,
         // 0xda96CaF05d3241927a3b0e3DaFD82318E3d742Df,
         Wallet.abi,
         signer

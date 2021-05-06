@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const init = async () => {
       const { signer, wallet, dai } = await getBlockchain();
-      const balanceEth = await wallet.callStatic.getUnderlyingEthBalance();
+      const balanceEth = await wallet.getUnderlyingEthBalance();
       const balanceDai = await wallet.getUnderlyingBalance(addresses.dai);
       setSigner(signer);
       setWallet(wallet);
